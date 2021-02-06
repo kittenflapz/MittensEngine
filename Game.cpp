@@ -105,7 +105,7 @@ void Game::Render()
 
     //m_spriteBatch->Begin(m_commandList.Get());
 
-    //m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Cat),
+    //m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Airplane),
     //    GetTextureSize(m_texture.Get()),
     //    m_screenPos, nullptr, Colors::White, cosf(time) * 4.f, m_origin);
 
