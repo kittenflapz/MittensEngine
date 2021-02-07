@@ -5,7 +5,7 @@
 #pragma once
 
 #include "StepTimer.h"
-#include "Aircraft.h"
+#include "World.h"
 
 
 // A basic game implementation that creates a D3D12 device and
@@ -113,7 +113,7 @@ private:
 
     // stuff that will go into World in the end
 
-    Aircraft aircraft;
+    World world;
 
 
 };

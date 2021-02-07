@@ -21,9 +21,7 @@ public:
 	DirectX::SimpleMath::Vector2 mVelocity;
 	DirectX::SimpleMath::Vector2 mPosition;
 
-
 private:
-
 	void move(DirectX::SimpleMath::Vector2 moveDelta);
 	
 };

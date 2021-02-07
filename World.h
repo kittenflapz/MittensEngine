@@ -9,10 +9,11 @@
 class World
 {
 public:
-	World(HWND window);
+	World();
 	void	update(float deltaTime);
 	void	draw();
 
+	Aircraft mPlayerAircraft;
 
 private:
 	void	loadTextures();
@@ -27,7 +28,6 @@ private:
 //		Air,
 //		LayerCount
 //	};
-
 
 private:
 	HWND mWindow;
@@ -44,7 +44,7 @@ private:
 	DirectX::SimpleMath::Rectangle mWorldBounds;
 	DirectX::SimpleMath::Vector2 mSpawnPosition;
 	float	 mBackgroundScrollSpeed;
-	Aircraft* mPlayerAircraft;
+
 };
 
 #pragma endregion
