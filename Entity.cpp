@@ -1,4 +1,6 @@
+#include "pch.h"
 #include "Entity.h"
+
 
 void Entity::setVelocity(DirectX::SimpleMath::Vector2 velocity)
 {
@@ -14,6 +16,22 @@ void Entity::setVelocity(float vx, float vy)
 DirectX::SimpleMath::Vector2 Entity::getVelocity() const
 {
 	return mVelocity;
+}
+
+void Entity::setPosition(DirectX::SimpleMath::Vector2 position)
+{
+	mPosition = position;
+}
+
+void Entity::setPosition(float px, float py)
+{
+	mPosition.x = px;
+	mPosition.y = py;
+}
+
+DirectX::SimpleMath::Vector2 Entity::getPosition() const
+{
+	return DirectX::SimpleMath::Vector2();
 }
 
 void Entity::updateCurrent(float deltaTime)

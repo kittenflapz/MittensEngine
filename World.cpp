@@ -1,7 +1,6 @@
-#pragma region step 2
+#include "pch.h"
 #include <World.h>
 
-#include "pch.h"
 
 
 // constructor needs to end up like this
@@ -64,7 +63,8 @@ void World::draw()
 
 	// now:
 
-	mPlayerAircraft.draw();
+	mPlayerAircraft->draw();
+
 }
 
 void World::loadTextures()

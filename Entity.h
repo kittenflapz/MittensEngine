@@ -1,8 +1,5 @@
 #pragma once
-
-#pragma once
 #include <SceneNode.hpp>
-#include "pch.h"
 
 
 class Entity : public SceneNode
@@ -13,8 +10,14 @@ public:
 	void	setVelocity(float vx, float vy);
 	DirectX::SimpleMath::Vector2 getVelocity() const;
 
+	void	setPosition(DirectX::SimpleMath::Vector2 position);
+	void	setPosition(float px, float py);
+	DirectX::SimpleMath::Vector2 getPosition() const;
+
 	virtual void updateCurrent(float deltaTime);
+
 
 public:
 	DirectX::SimpleMath::Vector2 mVelocity;
+	DirectX::SimpleMath::Vector2 mPosition;
 };

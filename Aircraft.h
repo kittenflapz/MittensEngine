@@ -1,7 +1,5 @@
 #pragma once
-
 #include <Entity.h>
-#include "pch.h"
 
 class Aircraft : public Entity
 {
@@ -14,19 +12,15 @@ public:
 	//	Raptor,
 	//};
 
-
-
 public:
 	Aircraft();
-
+	void draw() const override;
 
 private:
 	// maybe needs window handle passed in
 	virtual void drawCurrent() const;
 
-
 private:
 //	sf::Sprite	 mSprite;
-
 	char* spritePath;
 };

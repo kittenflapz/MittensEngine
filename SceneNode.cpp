@@ -1,3 +1,4 @@
+#include "pch.h"
 #include <SceneNode.hpp>
 #include <algorithm>
 #include <cassert>

@@ -2,16 +2,14 @@
 
 #include <SceneNode.hpp>
 #include <Aircraft.h>
-#include "pch.h"
 #include <array>
-
 
 
 // make singleton maybe>? ? ?? 
 class World
 {
 public:
-	explicit	 World(HWND window);
+	World(HWND window);
 	void	update(float deltaTime);
 	void	draw();
 
@@ -37,7 +35,7 @@ private:
 	// texture vector here
 	// TextureHolder	 mTextures;
 
-	SceneNode							mSceneGraph;
+	SceneNode	mSceneGraph;
 
 
 	// count will need to change back to layer number

@@ -1,9 +1,6 @@
 #pragma once
-
 #include <vector>
 #include <memory>
-#include "pch.h"
-
 
 class SceneNode 
 {
@@ -32,6 +29,6 @@ private:
 
 
 private:
-	std::vector<Ptr>		mChildren;
+	std::vector<Ptr> mChildren;
 	SceneNode* mParent;
 };
