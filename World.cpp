@@ -63,7 +63,7 @@ void World::draw()
 
 	// now:
 
-	mPlayerAircraft->draw();
+	//mPlayerAircraft->draw();
 
 }
 

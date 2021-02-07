@@ -5,6 +5,7 @@
 #pragma once
 
 #include "StepTimer.h"
+#include "Aircraft.h"
 
 
 // A basic game implementation that creates a D3D12 device and
@@ -108,4 +109,11 @@ private:
 
     RECT m_fullscreenRect;
     Microsoft::WRL::ComPtr<ID3D12Resource> m_background;
+
+
+    // stuff that will go into World in the end
+
+    Aircraft aircraft;
+
+
 };

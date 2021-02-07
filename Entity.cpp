@@ -31,12 +31,19 @@ void Entity::setPosition(float px, float py)
 
 DirectX::SimpleMath::Vector2 Entity::getPosition() const
 {
-	return DirectX::SimpleMath::Vector2();
+	return mPosition;
 }
 
 void Entity::updateCurrent(float deltaTime)
 {
 
 	// todo: wat
-	// move(mVelocity * dt.asSeconds());
+	 move(mVelocity);
 }
+
+void Entity::move(DirectX::SimpleMath::Vector2 moveDelta)
+{
+	mPosition += moveDelta;
+}
+
+

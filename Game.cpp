@@ -3,7 +3,6 @@
 //
 
 
-
 #include "pch.h"
 #include "Game.h"
 
@@ -23,6 +22,8 @@ Game::Game() noexcept :
     m_rtvDescriptorSize(0),
     m_fenceValues{}
 {
+    aircraft.setPosition(400.f, 300.f);
+    aircraft.setVelocity(5.f, 0.f);
 }
 
 Game::~Game()
@@ -66,6 +67,11 @@ void Game::Update(DX::StepTimer const& timer)
     float elapsedTime = float(timer.GetElapsedSeconds());
 
     // TODO: Add your game logic here.
+    aircraft.updateCurrent(timer.GetElapsedTicks());
+    aircraft.bounce();
+
+
+
     elapsedTime;
 }
 
@@ -154,11 +160,15 @@ void Game::Render()
         GetTextureSize(m_background.Get()),
         m_fullscreenRect);
 
+
+
     m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Airplane),
         GetTextureSize(m_texture.Get()),
-        m_screenPos, nullptr, Colors::White, 0.f, m_origin);
+        aircraft.getPosition(), nullptr, Colors::White, 0.f, m_origin);
 
     m_spriteBatch->End();
+
+
 
   
     // Show the new frame.

@@ -14,13 +14,16 @@ public:
 
 public:
 	Aircraft();
-	void draw() const override;
+	//void draw(std::unique_ptr<DirectX::DescriptorHeap> resourceDescriptor, Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList> cmdList,
+	//	std::unique_ptr<DirectX::SpriteBatch> spriteBatch, Microsoft::WRL::ComPtr<ID3D12Resource> texture, DirectX::SimpleMath::Vector2 origin) const; 
 
-private:
 	// maybe needs window handle passed in
-	virtual void drawCurrent() const;
+	virtual void drawMe() const;
+	void bounce();
 
 private:
 //	sf::Sprite	 mSprite;
 	char* spritePath;
+
+
 };
