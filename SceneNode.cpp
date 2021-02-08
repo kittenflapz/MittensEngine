@@ -36,6 +36,7 @@ void SceneNode::update(float deltaTime)
 void SceneNode::updateMe(float deltaTime)
 {
 	// stuff pertaining to this node's update
+
 }
 
 void SceneNode::updateChildren(float deltaTime)

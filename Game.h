@@ -47,73 +47,73 @@ private:
     void Clear();
     void Present();
 
-    void CreateDevice();
+   /* void CreateDevice();
     void CreateResources();
 
     void WaitForGpu() noexcept;
     void MoveToNextFrame();
     void GetAdapter(IDXGIAdapter1** ppAdapter);
 
-    void OnDeviceLost();
+    void OnDeviceLost();*/
 
-    // Application state
-    HWND                                                m_window;
-    int                                                 m_outputWidth;
-    int                                                 m_outputHeight;
+    //// Application state
+    //HWND                                                m_window;
+    //int                                                 m_outputWidth;
+    //int                                                 m_outputHeight;
 
-    // Direct3D Objects
-    D3D_FEATURE_LEVEL                                   m_featureLevel;
-    static const UINT                                   c_swapBufferCount = 2;
-    UINT                                                m_backBufferIndex;
-    UINT                                                m_rtvDescriptorSize;
-    Microsoft::WRL::ComPtr<ID3D12Device>                m_d3dDevice;
-    Microsoft::WRL::ComPtr<IDXGIFactory4>               m_dxgiFactory;
-    Microsoft::WRL::ComPtr<ID3D12CommandQueue>          m_commandQueue;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>        m_rtvDescriptorHeap;
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>        m_dsvDescriptorHeap;
-    Microsoft::WRL::ComPtr<ID3D12CommandAllocator>      m_commandAllocators[c_swapBufferCount];
-    Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>   m_commandList;
-    Microsoft::WRL::ComPtr<ID3D12Fence>                 m_fence;
-    UINT64                                              m_fenceValues[c_swapBufferCount];
-    Microsoft::WRL::Wrappers::Event                     m_fenceEvent;
+    //// Direct3D Objects
+    //D3D_FEATURE_LEVEL                                   m_featureLevel;
+    //static const UINT                                   c_swapBufferCount = 2;
+    //UINT                                                m_backBufferIndex;
+    //UINT                                                m_rtvDescriptorSize;
+    //Microsoft::WRL::ComPtr<ID3D12Device>                m_d3dDevice;
+    //Microsoft::WRL::ComPtr<IDXGIFactory4>               m_dxgiFactory;
+    //Microsoft::WRL::ComPtr<ID3D12CommandQueue>          m_commandQueue;
+    //Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>        m_rtvDescriptorHeap;
+    //Microsoft::WRL::ComPtr<ID3D12DescriptorHeap>        m_dsvDescriptorHeap;
+    //Microsoft::WRL::ComPtr<ID3D12CommandAllocator>      m_commandAllocators[c_swapBufferCount];
+    //Microsoft::WRL::ComPtr<ID3D12GraphicsCommandList>   m_commandList;
+    //Microsoft::WRL::ComPtr<ID3D12Fence>                 m_fence;
+    //UINT64                                              m_fenceValues[c_swapBufferCount];
+    //Microsoft::WRL::Wrappers::Event                     m_fenceEvent;
 
-    // Rendering resources
-    Microsoft::WRL::ComPtr<IDXGISwapChain3>             m_swapChain;
-    Microsoft::WRL::ComPtr<ID3D12Resource>              m_renderTargets[c_swapBufferCount];
-    Microsoft::WRL::ComPtr<ID3D12Resource>              m_depthStencil;
+    //// Rendering resources
+    //Microsoft::WRL::ComPtr<IDXGISwapChain3>             m_swapChain;
+    //Microsoft::WRL::ComPtr<ID3D12Resource>              m_renderTargets[c_swapBufferCount];
+    //Microsoft::WRL::ComPtr<ID3D12Resource>              m_depthStencil;
 
-    // Game state
+    //// Game state
     DX::StepTimer                                       m_timer;
 
 
 
-    // Sprite rendering stuff
+    //// Sprite rendering stuff
 
-    std::unique_ptr<DirectX::GraphicsMemory> m_graphicsMemory;
+    //std::unique_ptr<DirectX::GraphicsMemory> m_graphicsMemory;
 
-    std::unique_ptr<DirectX::DescriptorHeap> m_resourceDescriptors;
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_texture;
+    //std::unique_ptr<DirectX::DescriptorHeap> m_resourceDescriptors;
+    //Microsoft::WRL::ComPtr<ID3D12Resource> m_texture;
 
 
-    // one of these for each sprite
-    enum Descriptors
-    {
-        Airplane,
-        Background,
-        Count
-    };
+    //// one of these for each sprite
+    //enum Descriptors
+    //{
+    //    Airplane,
+    //    Background,
+    //    Count
+    //};
 
-    std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;
-    DirectX::SimpleMath::Vector2 m_screenPos;
-    DirectX::SimpleMath::Vector2 m_origin;
+    //std::unique_ptr<DirectX::SpriteBatch> m_spriteBatch;
+    //DirectX::SimpleMath::Vector2 m_screenPos;
+    //DirectX::SimpleMath::Vector2 m_origin;
 
-    RECT m_fullscreenRect;
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_background;
+    //RECT m_fullscreenRect;
+    //Microsoft::WRL::ComPtr<ID3D12Resource> m_background;
 
 
     // stuff that will go into World in the end
 
-    World world;
+   World world;
 
 
 };
