@@ -42,26 +42,32 @@ World::~World()
 
 void World::update(float deltaTime)
 {
-	// Scroll the world
-	//mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());
+    // Scroll the world
+    //mWorldView.move(0.f, mScrollSpeed * dt.asSeconds());
 
-	// Move the player sidewards (plane scouts follow the main aircraft)
-	DirectX::SimpleMath::Vector2 position = mPlayerAircraft.getPosition();
-	DirectX::SimpleMath::Vector2 velocity = mPlayerAircraft.getVelocity();
+    // Move the player sidewards (plane scouts follow the main aircraft)
+    DirectX::SimpleMath::Vector2 position = mPlayerAircraft.getPosition();
+    DirectX::SimpleMath::Vector2 velocity = mPlayerAircraft.getVelocity();
 
-	// If player touches borders, flip its X velocity
-	if (position.x <= 0
-		|| position.x >= 800.f)
-	{
-		velocity.x = -velocity.x;
-		mPlayerAircraft.setVelocity(velocity);
-	}
+    // If player touches borders, flip its X velocity
+    if (position.x <= 0
+        || position.x >= 800.f)
+    {
+        velocity.x = -velocity.x;
+        mPlayerAircraft.setVelocity(velocity);
+    }
 
-	// Apply movements
-	mSceneGraph.update(deltaTime);
+    // Apply movements
+    mSceneGraph.update(deltaTime);
 
-	mPlayerAircraft.updateCurrent(deltaTime);
-	mPlayerAircraft.bounce();
+    mPlayerAircraft.updateCurrent(deltaTime);
+    mPlayerAircraft.bounce();
+
+    backgroundA.updateCurrent(deltaTime); 
+    backgroundA.scroll();
+    backgroundB.updateCurrent(deltaTime);
+    backgroundB.scroll();
+
 }
 
 void World::draw()
@@ -109,6 +115,11 @@ void World::buildScene()
 
 	mPlayerAircraft.setPosition(400.f, 300.f);
 	mPlayerAircraft.setVelocity(5.f, 0.f);
+
+    backgroundA.setPosition(-200.f, 250.f);
+    backgroundB.setPosition(-200.f, -250.f);
+    backgroundA.setVelocity(0.f, 3.f);
+    backgroundB.setVelocity(0.f, 3.f);
 
 	//// Add player's aircraft
 	//std::unique_ptr<Aircraft> leader(new Aircraft(Aircraft::Eagle, mTextures));
@@ -623,7 +634,10 @@ void World::Render()
 
     m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Background),
         GetTextureSize(m_background.Get()),
-        m_fullscreenRect);
+        backgroundA.getPosition(), nullptr, Colors::White, 0.f, m_origin, 2.f);
+    m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Background),
+        GetTextureSize(m_background.Get()),
+        backgroundB.getPosition(), nullptr, Colors::White, 0.f, m_origin, 2.f);
 
     m_spriteBatch->Draw(m_resourceDescriptors->GetGpuHandle(Descriptors::Airplane),
         GetTextureSize(m_texture.Get()),

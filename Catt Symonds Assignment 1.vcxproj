@@ -188,6 +188,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="SceneNode.hpp" />
+    <ClInclude Include="ScrollingBackground.h" />
     <ClInclude Include="StepTimer.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
@@ -203,6 +204,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="ScrollingBackground.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>

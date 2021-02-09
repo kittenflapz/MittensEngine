@@ -40,6 +40,9 @@
     <ClInclude Include="Aircraft.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="ScrollingBackground.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -61,6 +64,9 @@
       <Filter>Game</Filter>
     </ClCompile>
     <ClCompile Include="Aircraft.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollingBackground.cpp">
       <Filter>Game</Filter>
     </ClCompile>
   </ItemGroup>

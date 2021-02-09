@@ -2,6 +2,7 @@
 
 #include <SceneNode.hpp>
 #include <Aircraft.h>
+#include <ScrollingBackground.h>
 #include <array>
 
 
@@ -14,8 +15,7 @@ public:
 	void	update(float deltaTime);
 	void	draw();
 
-	Aircraft mPlayerAircraft;
-
+	
     public:
 	void	loadTextures();
 	void	buildScene();
@@ -53,6 +53,12 @@ private:
 	// TextureHolder	 mTextures;
 
 	SceneNode	mSceneGraph;
+
+    // GAME OBJECTS
+
+    Aircraft mPlayerAircraft;
+    ScrollingBackground backgroundA;
+    ScrollingBackground backgroundB;
 
 
 	// count will need to change back to layer number
@@ -117,9 +123,6 @@ private:
 
     RECT m_fullscreenRect;
     Microsoft::WRL::ComPtr<ID3D12Resource> m_background;
-
-
-
 };
 
 #pragma endregion

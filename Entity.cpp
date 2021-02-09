@@ -36,7 +36,6 @@ DirectX::SimpleMath::Vector2 Entity::getPosition() const
 
 void Entity::updateCurrent(float deltaTime)
 {
-
 	// todo: wat
 	 move(mVelocity);
 }
